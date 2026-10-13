@@ -6,7 +6,7 @@
 <!-- ===== STEP 1: PASTE YOUR API KEY BETWEEN THE QUOTES ON LINE 6 ===== -->
 <script>
 const API_KEY = "AQ.Ab8RN6JlUgQbcrw3LkJm46NEA4QDG6MwkGUK2qX6IIznIFNO5Q";
-const MODEL = "gemini-1.5-flash";
+const MODEL = "gemini-2.5-flash";
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
