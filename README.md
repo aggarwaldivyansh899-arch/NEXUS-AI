@@ -5,8 +5,8 @@
 <head>
 <!-- ===== STEP 1: PASTE YOUR API KEY BETWEEN THE QUOTES ON LINE 6 ===== -->
 <script>
-const API_KEY = "AQ.Ab8RN6L1-dFHjkdRYsWTCjN93jxMKlwiHMrqrve9P8GVsj2QGQ";
-const MODEL = "gemini-3.5-flash-lite";
+const API_KEY = "AQ.Ab8RN6JlUgQbcrw3LkJm46NEA4QDG6MwkGUK2qX6IIznIFNO5Q";
+const MODEL = "gemini-1.5-flash";
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +32,7 @@ const MODEL = "gemini-3.5-flash-lite";
         }
 
         [data-theme="dark"] {
-            --bg-gradient: linear-gradient(135deg, #0f051d 1e%, #1e1b4b 50%, #09090b 100%);
+            --bg-gradient: linear-gradient(135deg, #0f051d 0%, #1e1b4b 50%, #09090b 100%);
             --panel-bg: rgba(17, 12, 34, 0.85);
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
@@ -83,7 +83,6 @@ const MODEL = "gemini-3.5-flash-lite";
             position: relative;
         }
 
-        /* DivyanSh Aggarwal Unique Signature Badge Style */
         .divyansh-badge {
             background: linear-gradient(135deg, #7c3aed, #a855f7);
             color: #ffffff;
@@ -98,7 +97,6 @@ const MODEL = "gemini-3.5-flash-lite";
             margin-bottom: 4px;
         }
 
-        /* Header */
         header {
             padding: 16px 24px;
             background: rgba(124, 58, 237, 0.05);
@@ -126,7 +124,6 @@ const MODEL = "gemini-3.5-flash-lite";
             font-size: 20px;
             font-weight: 700;
             box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
-            position: relative;
             animation: pulse-glow 3s infinite;
         }
 
@@ -173,7 +170,6 @@ const MODEL = "gemini-3.5-flash-lite";
             transform: translateY(-2px);
         }
 
-        /* Chat Body */
         .chat-messages {
             flex: 1;
             padding: 24px;
@@ -282,7 +278,6 @@ const MODEL = "gemini-3.5-flash-lite";
             color: var(--primary);
         }
 
-        /* Starter Chips */
         .starter-container {
             display: flex;
             gap: 10px;
@@ -308,7 +303,6 @@ const MODEL = "gemini-3.5-flash-lite";
             transform: translateY(-2px);
         }
 
-        /* Typing Indicator */
         .typing-indicator {
             display: flex;
             gap: 5px;
@@ -332,7 +326,6 @@ const MODEL = "gemini-3.5-flash-lite";
             40% { transform: scale(1.0); }
         }
 
-        /* Input Area */
         .input-container {
             padding: 16px 24px;
             background: rgba(124, 58, 237, 0.03);
@@ -414,7 +407,6 @@ const MODEL = "gemini-3.5-flash-lite";
             100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
         }
 
-        /* Markdown elements formatting */
         .bubble p { margin-bottom: 8px; }
         .bubble p:last-child { margin-bottom: 0; }
         .bubble ul, .bubble ol { margin-left: 20px; margin-bottom: 8px; }
@@ -450,9 +442,7 @@ const MODEL = "gemini-3.5-flash-lite";
         </header>
 
         <!-- Chat Messages -->
-        <div class="chat-messages" id="chatMessages">
-            <!-- Dynamic Messages populated here -->
-        </div>
+        <div class="chat-messages" id="chatMessages"></div>
 
         <!-- Input Area -->
         <div class="input-container">
@@ -469,11 +459,8 @@ const MODEL = "gemini-3.5-flash-lite";
     <!-- SYSTEM PROMPT -->
     <script>
     const SYSTEM_PROMPT = `
-ROLE: Act as a world-class team consisting of:  An AI systems architect specializing in Small Language Models.  A senior HTML, CSS, and JavaScript developer.  A futuristic interface and interaction designer.  An expert in AI orchestration, memory, retrieval, and tool calling.  A security-conscious engineer who avoids fake functionality and insecure credential handling.  Think like a product designer building an entirely new category of AI assistant, not a clone of existing chatbots.
-TASK: Build NEXUS AI: Adaptive Intelligence System, a chatbot that combines a futuristic interface with efficient AI capabilities.  Its defining innovation is Adaptive Intelligence: the system should select the most appropriate available model, tool, or workflow for each task instead of using the same approach for everything.  The application should include the following features.  1. Futuristic AI command center  Dark obsidian interface with electric cyan, violet, and subtle blue accents.  Animated central neural sphere or AI energy core.  Glassmorphism panels, soft neon borders, subtle particles, and smooth animations.  Responsive layout for desktop, tablet, and mobile.  Premium typography, carefully controlled spacing, and polished transitions.  Light and dark appearance options if practical.  2. Intelligent conversational engine  Functional chat input and send button.  Streaming responses when supported by the chosen model API.  Conversation history and new-chat functionality.  Markdown rendering, code blocks, copy buttons, and readable formatting.  Loading indicators and clear error messages.  Stop-generation control when supported.  Context-aware follow-up conversations.  3. Adaptive Intelligence Router Classify each incoming task into categories such as:  General conversation.  Coding and debugging.  Mathematics and calculations.  Document understanding.  Research and information retrieval.  Summarization and planning.  Choose a suitable available model or tool based on task complexity, capability, latency, and cost.  Use a small model for suitable lightweight tasks. Use a stronger model only when configured and justified. Use deterministic code for arithmetic whenever appropriate.  If routing is unavailable, fall back gracefully to the configured model. Never pretend that a model, tool, or secondary agent was used when it was not.  4. User-controlled AI memory  Optional persistent preferences and project notes.  A memory panel showing saved items.  Add, edit, inspect, and delete controls.  A clear distinction between temporary conversation context and saved memory.  User consent before storing sensitive or personal information.  No claims of permanent memory unless storage actually works.  5. AI tools and workspace  Calculator for reliable numerical results.  Code-writing workspace with syntax-highlighted output where supported.  Document upload and text extraction where technically available.  Summaries, checklists, and structured outputs.  A visual knowledge graph for connecting ideas.  Export and copy conversation features.  Implement actual working features first. Label unfinished or unsupported capabilities honestly.  6. Voice interaction  Microphone input using browser speech recognition when supported.  Optional text-to-speech output.  Clear permission and availability indicators.  Text chat must remain usable if voice features are unavailable.  7. AI activity panel Show meaningful operational statuses such as:  Understanding request.  Selecting a model or tool.  Retrieving relevant information.  Generating response.  Completed.  Display real model and tool information when available. Do not invent hidden reasoning, confidence scores, live token counts, or system activity.  8. SLM performance dashboard When actual measurements are available, display:  Selected model.  Response latency.  Input and output token counts.  Estimated API cost, if supported by trustworthy pricing data.  Task category and selected tool.  Local versus remote processing status.  Clearly label estimates and unavailable metrics.
-CONTEXT: NEXUS AI is designed for a beginner who wants to start with a manageable chatbot and gradually evolve it into a sophisticated SLM application.  The initial version should prioritize reliable core functionality over an excessive number of unfinished features.  Preferred first version:  One file named index.html.  HTML, CSS, and JavaScript in the same file.  No npm, frameworks, build tools, or additional source files.  Must be easy to save and open in a modern browser.  Use readable, organized, well-commented code.  Include helpful setup instructions and troubleshooting guidance.  For the initial prototype, use a configurable AI provider API if a compatible service is selected. Explain that an API-backed chatbot needs an internet connection.  Never place a real production API key in publicly distributed frontend code. If a direct browser connection is supported for a prototype, clearly warn that the key can be exposed. Recommend a secure backend or an appropriate local inference runtime for production.  For offline operation, explain that a standalone HTML file does not itself contain a working SLM runtime. Plan a later version that uses a compatible local model and inference engine.  Do not hardcode an unverified model identifier. Make the provider and model configurable, and explain how to choose a currently supported model.
-CONSTRAINTS: Follow these requirements strictly:  Deliver complete, usable code rather than pseudocode.  Do not omit sections with phrases such as “implement this later,” “rest of code here,” or ellipses.  Do not invent working API integrations, model capabilities, or tool results.  Do not claim the AI has memory, internet access, file-reading capability, or offline inference unless the feature is implemented.  Do not expose private API credentials in a production deployment.  Keep the interface responsive, accessible, and keyboard-friendly.  Validate inputs and handle network errors, rate limits, and malformed responses.  Prevent unsafe HTML rendering and sanitize untrusted model output.  Respect reduced-motion preferences and provide accessible labels for controls.  Use local storage only for appropriate user-controlled data, and provide a way to clear it.  Keep code organized into clearly labeled sections despite using a single file.  Avoid unnecessary dependencies and external services.  Do not use fake analytics or fabricated performance statistics.  If a requested feature cannot work under the chosen architecture, explain the limitation and implement the closest honest alternative.
-OUTPUT: Deliver the project in the following order:  Part 1: Product overview Explain the NEXUS AI concept, its standout features, and the architecture.  Part 2: Complete application Provide the entire index.html file in one code block. Include all HTML, CSS, and JavaScript required for the chosen working implementation. Do not omit code.  Part 3: Setup instructions Explain step by step how a beginner should:  Create index.html.  Paste and save the code.  Configure the selected model provider.  Open the application.  Send the first message.  Diagnose common errors.  Part 4: Feature verification List each feature and classify it as:  Fully implemented.  Implemented with browser or provider limitations.  Planned for a later version.  Part 5: SLM evolution roadmap Describe how to progress from the initial chatbot to:  Model routing.  Retrieval-augmented generation (RAG).  User-controlled long-term memory.  Local SLM inference.  Centered AI agents.  Secure deployment and evaluation.  Part 6: Final quality check Check for JavaScript errors, broken controls, incomplete event handlers, missing elements, unsafe rendering, incorrect API assumptions, and misleading status indicators.  Prioritize a working, polished core experience over feature quantity.  FINAL PRODUCT VISION  NEXUS AI should feel like a personal intelligence operating system: elegant, adaptive, transparent about its capabilities, efficient with resources, and ready to grow.  Its core promise is:  “One interface. Adaptive intelligence. Unlimited possibilities.”  Build it as a credible, extensible AI product—not merely a futuristic-looking mockup.
+ROLE: Act as a world-class team consisting of: An AI systems architect specializing in Small Language Models. A senior HTML, CSS, and JavaScript developer. A futuristic interface and interaction designer. An expert in AI orchestration, memory, retrieval, and tool calling. A security-conscious engineer who avoids fake functionality and insecure credential handling. Think like a product designer building an entirely new category of AI assistant, not a clone of existing chatbots.
+TASK: Build NEXUS AI: Adaptive Intelligence System, a chatbot that combines a futuristic interface with efficient AI capabilities. Its defining innovation is Adaptive Intelligence: the system should select the most appropriate available model, tool, or workflow for each task instead of using the same approach for everything.
 LANGUAGE: If the user writes in Hindi or Hinglish, reply in the same language.
 `;
     </script>
@@ -514,7 +501,6 @@ LANGUAGE: If the user writes in Hindi or Hinglish, reply in the same language.
         const themeToggleBtn = document.getElementById('themeToggle');
         const micBtn = document.getElementById('micBtn');
 
-        // Load saved state from localStorage
         function loadStorage() {
             const savedMessages = localStorage.getItem('nexus_messages');
             const savedTheme = localStorage.getItem('nexus_theme');
@@ -567,24 +553,18 @@ LANGUAGE: If the user writes in Hindi or Hinglish, reply in the same language.
 
         function formatMarkdown(text) {
             let safe = escapeHTML(text);
-            // Code blocks
             safe = safe.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
-            // Inline code
             safe = safe.replace(/`([^`]+)`/g, '<code>$1</code>');
-            // Bold
             safe = safe.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-            // Italic
             safe = safe.replace(/\*(.*?)\*/g, '<em>$1</em>');
-            // Bullet lists
             safe = safe.replace(/^\s*[-*]\s+(.*)$/gm, '<ul><li>$1</li></ul>');
-            // Line breaks
             safe = safe.replace(/\n/g, '<br>');
             return safe;
         }
 
         function renderMessages() {
             chatMessages.innerHTML = '';
-            messages.forEach((msg, idx) => {
+            messages.forEach((msg) => {
                 const messageDiv = document.createElement('div');
                 messageDiv.className = `message ${msg.sender === 'user' ? 'user' : 'bot'} ${msg.isError ? 'error' : ''}`;
                 
@@ -601,7 +581,6 @@ LANGUAGE: If the user writes in Hindi or Hinglish, reply in the same language.
 
                 bubbleWrapper.appendChild(bubble);
 
-                // Starters if present
                 if (msg.chips && msg.chips.length > 0) {
                     const chipsDiv = document.createElement('div');
                     chipsDiv.className = 'starter-container';
@@ -615,7 +594,6 @@ LANGUAGE: If the user writes in Hindi or Hinglish, reply in the same language.
                     bubbleWrapper.appendChild(chipsDiv);
                 }
 
-                // Footer with actions (copy/speak)
                 const footer = document.createElement('div');
                 footer.className = 'message-footer';
                 
@@ -674,7 +652,6 @@ LANGUAGE: If the user writes in Hindi or Hinglish, reply in the same language.
             saveStorage();
             renderMessages();
 
-            // Show typing indicator
             const typingId = 'typing_' + Date.now();
             messages.push({ sender: 'bot', text: '<div class="typing-indicator"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>', id: typingId, isTyping: true });
             renderMessages();
@@ -682,7 +659,6 @@ LANGUAGE: If the user writes in Hindi or Hinglish, reply in the same language.
 
             try {
                 const reply = await callAI(chatHistory);
-                // Remove typing indicator
                 messages = messages.filter(m => m.id !== typingId);
                 messages.push({ sender: 'bot', text: reply });
                 chatHistory.push({ role: 'assistant', text: reply });
@@ -696,7 +672,6 @@ LANGUAGE: If the user writes in Hindi or Hinglish, reply in the same language.
             }
         }
 
-        // Event Listeners
         sendBtn.onclick = () => submitMessage();
 
         userInput.onkeydown = (e) => {
@@ -733,7 +708,6 @@ LANGUAGE: If the user writes in Hindi or Hinglish, reply in the same language.
             }
         };
 
-        // Speech Recognition Setup
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
         if (SpeechRecognition) {
             micBtn.style.display = 'flex';
@@ -773,7 +747,6 @@ LANGUAGE: If the user writes in Hindi or Hinglish, reply in the same language.
             };
         }
 
-        // Initialize App
         loadStorage();
     </script>
 </body>
