@@ -5,7 +5,7 @@
 <head>
 <!-- ===== STEP 1: PASTE YOUR API KEY BETWEEN THE QUOTES ON LINE 6 ===== -->
 <script>
-const API_KEY = "AQ.Ab8RN6JlUgQbcrw3LkJm46NEA4QDG6MwkGUK2qX6IIznIFNO5Q";
+const API_KEY = "AQ.Ab8RN6IdT0h4Jbqop62pNLOrTMc_Bx3LO9o_uzhQqwEh_wv2qg";
 const MODEL = "gemini-2.5-flash";
 </script>
     <meta charset="UTF-8">
